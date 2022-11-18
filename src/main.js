@@ -26,7 +26,7 @@ const start = async () => {
   await mongoose.connect("mongodb+srv://MonMR00:Pan.tostado4@cluster0.cbeq5ju.mongodb.net/?retryWrites=true&w=majority");
 
   console.log("Cazadores service DB connected succesfully");
-  app.listen(3000, () => {
+  app.listen(process.env.PORT || 3000, () => {
     console.log("Service cazadores api started succesfully on port 3000!");
   });
 };
