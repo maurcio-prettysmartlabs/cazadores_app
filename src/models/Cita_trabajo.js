@@ -18,7 +18,7 @@ const citaTrabajoSchema = new mongoose.Schema(
       enum: ["En linea", "Presencial"],
     },
     ubicacion: String,
-    horario: Number,
+    horario: String,
   },
   {
     toJSON: {
@@ -33,4 +33,4 @@ const citaTrabajoSchema = new mongoose.Schema(
 
 const CitaTrabajo = mongoose.model("CitaTrabajo", citaTrabajoSchema);
 
-export { CitaTrabajo };
+module.exports = CitaTrabajo;

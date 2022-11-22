@@ -10,9 +10,9 @@ const proyectoSchema = new mongoose.Schema(
       ref: "Cazador",
     },
     nombreProyecto: String,
-    requisitos: [String],
+    requisitos: String,
     duracion: String,
-    puestosDisponibles: [String],
+    puestosDisponibles: String,
   },
   {
     toJSON: {
@@ -27,4 +27,4 @@ const proyectoSchema = new mongoose.Schema(
 
 const Proyecto = mongoose.model("Proyecto", proyectoSchema);
 
-export { Proyecto };
+module.exports = Proyecto;

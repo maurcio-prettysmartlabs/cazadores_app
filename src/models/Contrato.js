@@ -17,8 +17,8 @@ const contratoSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Proyecto",
     },
-    fechaInicio: Number,
-    duración: String,
+    fechaInicio: String,
+    duracion: String,
     pagoTotal: Number,
   },
   {
@@ -34,4 +34,4 @@ const contratoSchema = new mongoose.Schema(
 
 const Contrato = mongoose.model("Contrato", contratoSchema);
 
-export { Contrato };
+module.exports = Contrato;

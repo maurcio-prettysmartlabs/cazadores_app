@@ -22,7 +22,7 @@ const speedDateSchema = new mongoose.Schema(
       enum: ["5min", "10min", "15min"],
     },
     ubicacion: String,
-    horario: Number,
+    horario: String,
     tipoReunion: {
       type: String,
       enum: ["En linea", "Presencial"],
@@ -41,4 +41,4 @@ const speedDateSchema = new mongoose.Schema(
 
 const SpeedDate = mongoose.model("SpeedDate", speedDateSchema);
 
-export { SpeedDate };
+module.exports = SpeedDate;
