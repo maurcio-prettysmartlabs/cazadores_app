@@ -22,7 +22,6 @@ router.post("/api/createtalento", async (req, res) => {
       disponibilidad,
     });
     await talento.save();
-    console.log(talento);
     res.json({ created: "true" });
   } catch (err) {
     throw err;

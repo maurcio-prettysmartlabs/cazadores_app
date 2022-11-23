@@ -1,7 +1,4 @@
 const mongoose = require("mongoose");
-// Made to prevent autocasting from string to number
-// @ts-ignore
-mongoose.Number.cast(false);
 
 const speedDateSchema = new mongoose.Schema(
   {
@@ -9,23 +6,27 @@ const speedDateSchema = new mongoose.Schema(
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Proyecto",
+        required: true,
       },
     ],
     talentosInvitados: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Talento",
+        required: true,
       },
     ],
     duracionSesion: {
       type: String,
       enum: ["5min", "10min", "15min"],
+      required: true,
     },
-    ubicacion: String,
-    horario: String,
+    ubicacion: { type: String, required: true },
+    horario: { type: String, required: true },
     tipoReunion: {
       type: String,
       enum: ["En linea", "Presencial"],
+      required: true,
     },
   },
   {

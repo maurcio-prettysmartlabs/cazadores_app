@@ -3,7 +3,7 @@
 */
 
 const express = require("express");
-const Cazador = require("../../models/Cazador");
+const Contrato = require("../../models/Cazador");
 const Proyecto = require("../../models/Proyecto");
 
 const router = express.Router();
@@ -12,7 +12,7 @@ router.delete("/api/proyectos", async (req, res) => {
   try {
     const { identifier } = req.query;
     const proyecto = await Proyecto.findOneAndDelete({ nombreProyecto: identifier });
-    // await Proyecto.deleteMany({ empresa: cazador.id });
+    // await Contrato.deleteMany({ listaProyectos: proyecto.id });
 
     res.status(200).json({ deleted: true });
   } catch (err) {

@@ -1,20 +1,36 @@
 const mongoose = require("mongoose");
-// Made to prevent autocasting from string to number
-// @ts-ignore
-mongoose.Number.cast(false);
 
 const cazadorSchema = new mongoose.Schema(
   {
-    nombreEmpresa: String,
+    nombreEmpresa: {
+      type: String,
+      required: true,
+    },
     cuotaDePago: {
       type: String,
       enum: ["free", "basic", "pro"],
+      required: true,
     },
-    email: String,
-    noTel: String,
-    paginaWeb: String,
-    ubicacion: String,
-    giroProyectos: String,
+    email: {
+      type: String,
+      required: true,
+    },
+    noTel: {
+      type: String,
+      required: true,
+    },
+    paginaWeb: {
+      type: String,
+      required: true,
+    },
+    ubicacion: {
+      type: String,
+      required: true,
+    },
+    giroProyectos: {
+      type: String,
+      required: true,
+    },
     listaProyectos: [
       {
         type: mongoose.Schema.Types.ObjectId,
