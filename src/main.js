@@ -11,14 +11,17 @@ app.use(cors());
 // Cazador routes imports
 const createCazadorRouter = require("./routes/Cazador/createCazador");
 const getAllCazadoresRouter = require("./routes/Cazador/getAllCazadores");
+const deleteCazadorRouter = require("./routes/Cazador/deleteCazador");
 
 // Talentos routes imports
 const createTalentoRouter = require("./routes/Talento/createTalento");
 const getAllTalentosRouter = require("./routes/Talento/getAllTalentos");
+const deleteTalentoRouter = require("./routes/Talento/deleteTalento");
 
 // Proyectos routes imports
 const createProjectRouter = require("./routes/Proyecto/createProyect");
 const getAllProjectsRouter = require("./routes/Proyecto/getAllProyectos");
+const deleteProyectoRouter = require("./routes/Proyecto/deleteProyect");
 
 // Contrato routes imports
 const createContratoRouter = require("./routes/Contrato/createContract");
@@ -35,14 +38,17 @@ const getAllSpeedDatesRouter = require("./routes/SpeedDate/getAllSpeedDates");
 // Talentos routes use
 app.use(createTalentoRouter);
 app.use(getAllTalentosRouter);
+app.use(deleteCazadorRouter);
 
 // Cazador routes use
 app.use(createCazadorRouter);
 app.use(getAllCazadoresRouter);
+app.use(deleteTalentoRouter);
 
 // Proyectos routes use
 app.use(createProjectRouter);
 app.use(getAllProjectsRouter);
+app.use(deleteProyectoRouter);
 
 // Contrato routes use
 app.use(createContratoRouter);
